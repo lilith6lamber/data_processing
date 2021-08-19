@@ -3,24 +3,31 @@ $(function () {
 
     window.addEventListener('load', AOS.refresh);
 
-    $('.btn-menu').on('click', () => {
+    $('body').on('click', '.btn-menu', () => {
         $('.navbar_links-list--mobile').toggle('.open');
-    });
+    })
 
-    window.addEventListener('resize', changeBtn);
+    window.addEventListener('resize', replaceBtn);
 
-    changeBtn();
+    replaceBtn();
 });
 
-function changeBtn() {
-    const login = $('.btn-login');
-    const register = $('.btn-register');
+
+function replaceBtn() {
+    const btnParent = $('.user-links');
 
     if (window.innerWidth < 992) {
-        login.html(`<img src="img/sign-in.svg" alt="Sign In">`).addClass('btn-round').removeClass('btn-empty');
-        register.html(`<img src="img/sign-up.svg" alt="Sign Up">`).addClass('btn-round').removeClass('btn-filled');
+        btnParent.html(`<a href="javascript:(void)" class="btn-menu order-1">
+                            <img src="img/menu.svg" alt="Menu">
+                        </a>
+                        <a href="javascript:(void)" class="btn btn-round">
+                            <img src="img/sign-in.svg" alt="Sign Ip">
+                        </a>
+                        <a href="javascript:(void)" class="btn btn-round">
+                            <img src="img/sign-up.svg" alt="Sign Up">
+                        </a>`);
     } else {
-        login.html(`<span>Sign in</span>`).removeClass('btn-round').addClass('btn-empty');
-        register.html(`<span>Sign up</span>`).removeClass('btn-round').addClass('btn-filled');
+        btnParent.html(`<a href="javascript:(void)" class="btn btn-empty"><span>Sign in</span></a>
+                        <a href="javascript:(void)" class="btn btn-filled">Sign up</a>`);
     }
 }
