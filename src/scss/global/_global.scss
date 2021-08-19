@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	outline: none;
+}
+
+.flex {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.--just-space {
+	justify-content: space-between;
+}
+
+.--just-center {
+	justify-content: center;
+}
+
+.--just-end {
+	justify-content: flex-end;
+}
+
+.--align-str {
+	align-items: stretch;
+}
+
+.--align-center {
+	align-items: center;
+}
+
+.--align-end {
+	align-items: flex-end;
+}
+
+.--dir-col {
+	flex-direction: column;
+}
+
+html {
+	font-size: 16px;
+}
+
+html,
+body {
+	min-height: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+
+body {
+	font-size: 1rem;
+
+	&::-webkit-scrollbar-track {
+		border: 1px solid black;
+		background-color: #290c3a;
+	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		background-color: #bd2a2a;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background-image: -webkit-gradient(linear,
+				left bottom,
+				left top,
+				color-stop(0.44, rgb(182, 122, 217)),
+				color-stop(0.72, rgb(123, 82, 146)),
+				color-stop(0.86, rgb(93, 55, 114)));
+	}
+}
+
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a,
+button {
+	transition: all .5s ease;
+}
+
+a:focus, a:focus-visible {
+	outline: none !important;
+	box-shadow: none !important;
+}
